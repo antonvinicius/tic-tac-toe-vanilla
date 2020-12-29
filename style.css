@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 300px;
+    text-align: center;
+}
+
+#turn {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#menu {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#menu button {
+    padding: 5px;
+}
+
+#menu h1 {
+    display: inline-block;
+}
+
+#menu img {
+    width: 50px;
+}
+
+.choose {
+    opacity: 0%;
+    display: none;
+    justify-content: center;
+    margin-bottom: 10px;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+.ch {
+    display: inline-block;
+}
+
+#grid {
+    display: none;
+}
+
+.grid-tic-tac-toe {
+    opacity: 1;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    justify-content: center;
+    gap: 10px;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.grid-tic-tac-toe.won {
+    opacity: 0.4;
+}
+
+.tic-tac-toe-item, .ch {
+    cursor: pointer;
+    background-color: #ddd;
+    width: 100px;
+    height: 100px;
+}
+
+.tic-tac-toe-item.winner {
+    background-color: rgb(84, 240, 92);
+}
+
+.tic-tac-toe-item.enemy {
+    background-color: rgb(216, 60, 60);
+}
+
+
+.left {
+    justify-self: flex-end;
+}
+.right {
+    justify-self: flex-start;
+}
+
+.tic-tac-toe-item.cross, .ch.cross {
+    background-image: url('./assets/icons/cancel.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    transition: all 0.3s;
+}
+
+.tic-tac-toe-item.circle, .ch.circle {
+    background-image: url('./assets/icons/rec.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    transition: all 0.3s;
+}
+
+.winner, .enemy {
+    animation-name: spinning;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes spinning {
+    from {transform: rotate(10deg);}
+    to {transform: rotate(-10deg);}
+}
+
+.replay {
+    display: none;
+}
+.replay button, #playersName input, #playersName button {
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: white;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    justify-content: center;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#score button {
+    padding: 1px 10px 1px 10px;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 30px;
+}
+
+#playersName {
+    display: none;
+    margin: auto;
+    width: 300px;
+    flex-direction: column;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#playersName button {
+    background-color: #ddd;
+}
+
+#playersName input {
+    cursor: default;
+}

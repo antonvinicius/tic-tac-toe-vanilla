@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="turn"></h1>
+        <div id="menu">
+            <h1>Jogo da Velha</h1>
+            <img src="./assets/icons/040-tic tac toe.svg">
+            <div class="group-btn">
+                <button id="cpu" onclick="storeMenuChoice(this)">Jogar contra CPU</button>
+                <button id="local" onclick="storeMenuChoice(this)">Jogar Multiplayer (Local)</button>
+                <button disabled id="internet" onclick="storeMenuChoice(this)">Jogar Multiplayer (Internet)</button>
+            </div>
+        </div>
+        <div id="score">
+            <button id="scr1">0</button>
+            <h1>X</h1>
+            <button id="scr2">0</button>
+        </div>
+        <div id="playersName">
+            <input type="text" placeholder="Nome do Jogador 1" id="p1">
+            <input type="text" placeholder="Nome do Jogador 2" id="p2">
+        </div>
+        <div class="choose" id="ch">
+            <h1 id="chooseTxt">Escolha o seu ícone</h1>
+            <div onclick="choose(this)" class="ch cross"></div>
+            <div onclick="choose(this)" class="ch circle"></div>
+        </div>
+        <div class="grid-tic-tac-toe" id="grid">
+            <div class="tic-tac-toe-item left" id="1"></div>
+            <div class="tic-tac-toe-item" id="2"></div>
+            <div class="tic-tac-toe-item right" id="3"></div>
+            <div class="tic-tac-toe-item left" id="4"></div>
+            <div class="tic-tac-toe-item" id="5"></div>
+            <div class="tic-tac-toe-item right" id="6"></div>
+            <div class="tic-tac-toe-item left" id="7"></div>
+            <div class="tic-tac-toe-item" id="8"></div>
+            <div class="tic-tac-toe-item right" id="9"></div>
+        </div>
+        <div class="replay" id="replay">
+            <button id="btn">Jogar Novamente</button>
+            <button onclick="location.reload()">Ir para o Menu</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
